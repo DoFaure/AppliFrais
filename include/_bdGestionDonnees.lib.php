@@ -16,6 +16,8 @@
  */
 function connecterServeurBD() {
   $result=mysqli_connect("127.0.0.1","root","","gsb_frais");
+ // $result=mysqli_connect("172.19.66.36","root","","gsbfrais4nantier");
+
    return ($result);
 }
 

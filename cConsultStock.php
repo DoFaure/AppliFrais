@@ -28,44 +28,20 @@ $req = mysqli_query($connexion,$sql) or die('Erreur SQL !<br />'.$sql.'<br />'.m
   echo 'Id medicament : '.$data['idmedic'].'<br />';
   echo 'Quantite  :' .$data['quantite']. '</br>';
 }*/
-
-// debut du tableau
-echo '<table bgcolor="#FFFFFF">'."\n";
-
-        // première ligne on affiche les titres prénom et surnom dans 2 colonnes
-
-  echo '<tr>';
-
-  echo '<td bgcolor="#669999"><b><u>Id visiteur</u></b></td>';
-
-  echo '<td bgcolor="#669999"><b><u>Id medecin</u></b></td>';
-
-  echo '<td bgcolor="#669999"><b><u>Quantite</u></b></td>';
-
-  echo '</tr>'."\n";
-
-    // lecture et affichage des résultats sur 2 colonnes, 1 résultat par ligne.    
-
-    while($row = mysql_fetch_array($req, MYSQL_NUM)) {
-
-        echo '<tr>';
-
-        echo '<td bgcolor="#CCCCCC">'.$row["idvisiteur"].'</td>';
-
-        echo '<td bgcolor="#CCCCCC">'.$row["idmedic"].'</td>';
-
-      echo '<td bgcolor="#CCCCCC">'.$row["quantite"].'</td>';
-
-      echo '</tr>'."\n";
-
-    }
-
-    echo '</table>'."\n";
-
-
+echo '<div id="contenu">';
+echo '<table width="100%" length="80%">';
+ 
+$rows = mysqli_fetch_assoc($req);
+echo '<tr><th>', implode('</th><th>', array_keys($rows)), '</th></tr>';
+ 
+do {
+    echo '<tr><td>', implode('</td><td>', $rows), '</td></tr>';
+} while($rows = mysqli_fetch_assoc($req));
 
 
 mysqli_free_result ($req);
+echo '</table>';
+echo '</div>';
 ?>
 
 <?php        

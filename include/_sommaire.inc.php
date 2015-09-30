@@ -42,6 +42,9 @@
            <li class="smenu">
               <a href="cConsultFichesFrais.php" title="Consultation de mes fiches de frais">Mes fiches de frais</a>
            </li>
+           <li class="smenu">
+              <a href="cConsultStock.php" title="Consultation des stocks">Consultation stock</a>
+           </li>
          </ul>
         <?php
           // affichage des éventuelles erreurs déjà détectées
