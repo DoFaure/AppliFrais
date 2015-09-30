@@ -41,6 +41,8 @@
            </li>
            <li class="smenu">
               <a href="cConsultFichesFrais.php" title="Consultation de mes fiches de frais">Mes fiches de frais</a>
+            <li class="menu">
+              <a href="cRetraitEchantillonVisiteur.php" title="Retrait d'un échantillon pour un visiteur">Retrait d'un échantillon</a>
            </li>
            <li class="smenu">
               <a href="cConsultStock.php" title="Consultation des stocks">Consultation stock</a>

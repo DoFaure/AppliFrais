@@ -364,5 +364,19 @@ function modifierEtatFicheFrais($idCnx, $unMois, $unIdVisiteur, $unEtat) {
                "', dateModif = now() where idVisiteur ='" .
                $unIdVisiteur . "' and mois = '". $unMois . "'";
     mysqli_query($connexion, $requete);
-}             
+}
+
+function ajouterEchantillonVisiteur($idCnx, $unIdMedic, $uneQuantite) {
+    $connexion=connecterServeurBD();
+    $unIdMedic = filtrerChainePourBD($unIdMedic);
+    $uneQuantite = filtrerChainePourBD($uneQuantite);
+    $requete = "insert into stockvisiteur(idVisiteur, idmedic, quantite) 
+                values ('" . $unIdVisiteur . "','" . $unIdMedic . "','" . $uneQuantite .")";
+    mysqli_query($connexion, $requete);
+}
+
+function verifierQuantiteMedicament($uneQuantite, $unIdMedic){
+
+}
+
 ?>
