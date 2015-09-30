@@ -16,6 +16,8 @@
  */
 function connecterServeurBD() {
   $result=mysqli_connect("127.0.0.1","root","","gsb_frais");
+ // $result=mysqli_connect("172.19.66.36","root","","gsbfrais4nantier");
+
    return ($result);
 }
 
@@ -362,5 +364,19 @@ function modifierEtatFicheFrais($idCnx, $unMois, $unIdVisiteur, $unEtat) {
                "', dateModif = now() where idVisiteur ='" .
                $unIdVisiteur . "' and mois = '". $unMois . "'";
     mysqli_query($connexion, $requete);
-}             
+}
+
+function ajouterEchantillonVisiteur($idCnx, $unIdMedic, $uneQuantite) {
+    $connexion=connecterServeurBD();
+    $unIdMedic = filtrerChainePourBD($unIdMedic);
+    $uneQuantite = filtrerChainePourBD($uneQuantite);
+    $requete = "insert into stockvisiteur(idVisiteur, idmedic, quantite) 
+                values ('" . $unIdVisiteur . "','" . $unIdMedic . "','" . $uneQuantite .")";
+    mysqli_query($connexion, $requete);
+}
+
+function verifierQuantiteMedicament($uneQuantite, $unIdMedic){
+
+}
+
 ?>

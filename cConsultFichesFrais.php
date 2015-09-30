@@ -140,7 +140,7 @@
   	   <caption>Descriptif des éléments hors forfait - <?php echo $tabFicheFrais["nbJustificatifs"]; ?> justificatifs reçus -
        </caption>
              <tr>
-                <th class="date">Date</th>
+                  <th class="date">Date</th>
                 <th class="libelle">Libellé</th>
                 <th class="montant">Montant</th>                
              </tr>
