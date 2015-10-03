@@ -80,7 +80,7 @@ function filtrerChainePourBD($str) {
 function obtenirDetailVisiteur($idCnx, $unId) {
 	$connexion=connecterServeurBD();
     $id = filtrerChainePourBD($unId);
-    $requete = "select id, nom, prenom from visiteur where id='" . $unId . "'";
+    $requete = "select id, nom, role, prenom from visiteur where id='" . $unId . "'";
     $idJeuRes = mysqli_query($connexion, $requete);  
     $ligne = false;     
     if ( $idJeuRes ) {
@@ -337,7 +337,7 @@ function verifierInfosConnexion($idCnx, $unLogin, $unMdp) {
     $unLogin = filtrerChainePourBD($unLogin);
     $unMdp = filtrerChainePourBD($unMdp);
     // le mot de passe est crypté dans la base avec la fonction de hachage md5
-    $req = "select id, nom, prenom, login, mdp from Visiteur where login='".$unLogin."' and mdp='" . $unMdp . "'";
+    $req = "select id, nom, prenom, role, login, mdp from Visiteur where login='".$unLogin."' and mdp='" . $unMdp . "'";
     $idJeuRes = mysqli_query($connexion, $req);
     $ligne = false;
     if ( $idJeuRes ) {

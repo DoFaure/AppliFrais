@@ -36,9 +36,10 @@ function obtenirIdUserConnecte() {
  * @param string login du visiteur
  * @return void    
  */
-function affecterInfosConnecte($id, $login) {
+function affecterInfosConnecte($id, $login, $role) {
     $_SESSION["idUser"] = $id;
     $_SESSION["loginUser"] = $login;
+    $_SESSION["role"]= $role;
 }
 
 /** 
